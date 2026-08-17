@@ -1,0 +1,11 @@
+<?php
+// Copy this file to config.php on Hostinger and enter the database details from hPanel.
+return [
+    'site_name' => 'Victory Express',
+    'db' => [
+        'host' => 'localhost',
+        'name' => 'your_hostinger_database_name',
+        'user' => 'your_hostinger_database_user',
+        'password' => 'your_secure_database_password',
+    ],
+];

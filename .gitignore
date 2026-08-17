@@ -1,0 +1,10 @@
+/config.php
+/node_modules/
+/.env
+/.idea/
+/.vscode/
+*.log
+assets/images/*.png
+assets/images/victory-express-trade-corridor.jpg
+/*.docx
+/stitch_victory_express_trading_website/

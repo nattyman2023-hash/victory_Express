@@ -1,0 +1,66 @@
+/*
+ * Victory Express — minimal custom CSS supplementing the Tailwind design system.
+ * Tailwind provides the utility layer; this file covers the few things that
+ * utility classes cannot express cleanly (Material Symbols axes, editorial
+ * backdrops, tonal layering, the mobile nav slide, and accessibility helpers).
+ */
+
+/* Material Symbols — base axis settings (Outlined). */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-feature-settings: 'liga';
+    user-select: none;
+}
+.icon-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Skip link for keyboard users. */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+}
+.skip-link:focus {
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: #b51b15;
+    color: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+}
+
+/* Quiet architectural backdrop for editorial page introductions. */
+.hero-backdrop {
+    background:
+        radial-gradient(ellipse at 88% 8%, rgba(181, 27, 21, 0.11) 0%, rgba(181, 27, 21, 0.04) 24%, transparent 48%),
+        radial-gradient(ellipse at 18% 100%, rgba(211, 228, 254, 0.8) 0%, rgba(211, 228, 254, 0.2) 34%, transparent 62%),
+        linear-gradient(118deg, #edf4ff 0%, #f8f9ff 52%, #ffffff 100%);
+}
+
+/* Tonal layering between sections (DESIGN.md favours tonal layering over shadows). */
+.tonal-tier {
+    background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+/* Mobile navigation panel — smooth slide using max-height. */
+.mobile-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, box-shadow 0.3s ease;
+}
+.mobile-nav.is-open {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+    }
+}
