@@ -44,6 +44,12 @@ function asset(string $path): string
     return url('assets/' . ltrim($path, '/'));
 }
 
+function site_url(string $path = ''): string
+{
+    $base = rtrim((string) (site_config()['site_url'] ?? 'https://victoryexpressgt.com'), '/');
+    return $path === '' ? $base . '/' : $base . '/' . ltrim($path, '/');
+}
+
 function e(?string $value): string
 {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
@@ -79,15 +85,24 @@ function render_page(string $view, string $title): void
 function page_description(string $view): string
 {
     $descriptions = [
-        'home' => 'Victory Express General Trading connects global supply chains from the heart of the UAE.',
-        'about' => 'Learn how Victory Express brings structural integrity, scale, and reliability to global trade.',
-        'industries' => 'Explore the industrial sectors and sourcing capabilities served by Victory Express.',
-        'reach' => 'A Dubai-led network built to connect markets, suppliers, and critical cargo worldwide.',
-        'sustainability' => 'A practical commitment to resilient supply chains, responsible sourcing, and long-term value.',
-        'contact' => 'Start a conversation with the Victory Express team in Dubai.',
+        'home' => 'Victory Express is a Dubai-based general trading company connecting industrial equipment, global sourcing, and reliable supply chains across international markets.',
+        'about' => 'Learn about Victory Express General Trading LLC, a Dubai-based trading partner built on trust, industrial expertise, and dependable global execution.',
+        'industries' => 'Explore Victory Express industries, from mining, industrial, oil and gas, electrical, construction, and hotel amenity equipment trading.',
+        'reach' => 'Discover the Dubai-led global trade network Victory Express uses to connect suppliers, customers, and critical cargo across Europe, Asia, Africa, and the Middle East.',
+        'sustainability' => 'See how Victory Express approaches responsible sourcing, resilient supply chains, operational efficiency, and long-term value in global trade.',
+        'contact' => 'Contact Victory Express General Trading LLC in Dubai for industrial procurement, equipment sourcing, logistics, and international trading partnerships.',
+        'privacy' => 'Read the Victory Express privacy policy covering inquiry data, business communication, and website security.',
+        'terms' => 'Read the Victory Express website terms of service for general information, inquiries, and commercial engagement.',
         'not-found' => 'The requested Victory Express page could not be found.',
     ];
     return $descriptions[$view] ?? 'Victory Express General Trading LLC.';
+}
+
+function page_robots(string $view): string
+{
+    return $view === 'not-found'
+        ? 'noindex, nofollow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 }
 
 function db(): ?PDO

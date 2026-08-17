@@ -1,6 +1,7 @@
 <?php
 return [
     'site_name' => 'Victory Express',
+    'site_url' => 'https://victoryexpressgt.com',
     'db' => [
         'host' => getenv('VEX_DB_HOST') ?: 'localhost',
         'name' => getenv('VEX_DB_NAME') ?: 'victory_express',

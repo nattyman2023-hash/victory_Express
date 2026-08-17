@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /database/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /config.php
+Disallow: /config.example.php
+Disallow: /config.php.example
+Disallow: /stitch_victory_express_trading_website/
+
+Sitemap: https://victoryexpressgt.com/sitemap.xml

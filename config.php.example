@@ -2,6 +2,7 @@
 // Copy this file to config.php on Hostinger and enter the database details from hPanel.
 return [
     'site_name' => 'Victory Express',
+    'site_url' => 'https://victoryexpressgt.com',
     'db' => [
         'host' => 'localhost',
         'name' => 'your_hostinger_database_name',

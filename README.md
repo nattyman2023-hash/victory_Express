@@ -36,6 +36,12 @@ The contact form uses PDO prepared statements, server-side validation, a session
 
 The root `.htaccess` provides clean routes, blocks configuration/database/reference files, sets cache rules for static assets, and enables compression when supported by Apache.
 
+## SEO and indexing
+
+The site includes unique metadata for every public route, canonical URLs, Open Graph and Twitter cards, Organization/WebSite/WebPage JSON-LD, breadcrumbs, an Industries item list, `robots.txt`, and `sitemap.xml`.
+
+After the domain is live over HTTPS, add `https://victoryexpressgt.com/sitemap.xml` in Google Search Console and request indexing for the homepage and key commercial pages.
+
 ## Project structure
 
 - `main.php` — front controller and route map

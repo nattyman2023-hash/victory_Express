@@ -29,12 +29,12 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && $route === 'contact') {
 }
 
 $routes = [
-    'home' => ['view' => 'home', 'title' => 'Global Trading Excellence'],
-    'about' => ['view' => 'about', 'title' => 'About Victory Express'],
-    'industries' => ['view' => 'industries', 'title' => 'Industries We Serve'],
-    'reach' => ['view' => 'reach', 'title' => 'Global Reach'],
-    'sustainability' => ['view' => 'sustainability', 'title' => 'Sustainability'],
-    'contact' => ['view' => 'contact', 'title' => 'Contact Victory Express'],
+    'home' => ['view' => 'home', 'title' => 'UAE Global Trading & General Trading'],
+    'about' => ['view' => 'about', 'title' => 'About a Dubai General Trading Company'],
+    'industries' => ['view' => 'industries', 'title' => 'Industrial Equipment Trading & Supply'],
+    'reach' => ['view' => 'reach', 'title' => 'Global Trade Network from Dubai'],
+    'sustainability' => ['view' => 'sustainability', 'title' => 'Responsible & Sustainable Global Trade'],
+    'contact' => ['view' => 'contact', 'title' => 'Contact Victory Express in Dubai'],
     'privacy' => ['view' => 'privacy', 'title' => 'Privacy Policy'],
     'terms' => ['view' => 'terms', 'title' => 'Terms of Service'],
 ];

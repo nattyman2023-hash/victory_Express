@@ -6,6 +6,16 @@
  */
 
 /* Material Symbols — base axis settings (Outlined). */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-width: 320px;
+}
+img {
+    max-width: 100%;
+}
+
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     font-feature-settings: 'liga';
@@ -46,13 +56,27 @@
 
 /* Mobile navigation panel — smooth slide using max-height. */
 .mobile-nav {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    z-index: 40;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, box-shadow 0.3s ease;
 }
 .mobile-nav.is-open {
-    max-height: 80vh;
+    max-height: calc(100vh - 5rem);
     overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+@media (max-width: 767px) {
+    .hero-backdrop {
+        background:
+            radial-gradient(ellipse at 90% 4%, rgba(181, 27, 21, 0.1) 0%, transparent 42%),
+            linear-gradient(140deg, #edf4ff 0%, #f8f9ff 62%, #ffffff 100%);
+    }
 }
 
 /* Respect reduced-motion preferences. */

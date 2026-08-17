@@ -40,7 +40,7 @@
             <?php $spans = ['md:col-span-8', 'md:col-span-4', 'md:col-span-5', 'md:col-span-7']; ?>
             <?php foreach (array_slice($industries, 0, 4) as $index => $industry): ?>
                 <a class="<?= $spans[$index] ?? 'md:col-span-6' ?> relative rounded overflow-hidden group block" href="<?= e(url('industries#' . $industry['slug'])) ?>">
-                    <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= e($industry['image']) ?>')"></div>
+                    <img class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" src="<?= e($industry['image']) ?>" alt="<?= e($industry['title']) ?>" loading="lazy" decoding="async">
                     <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8"><h3 class="font-headline-lg text-headline-lg text-on-primary mb-2"><?= e($industry['title']) ?></h3><p class="font-body-md text-body-md text-surface-container-low max-w-md"><?= e($industry['short']) ?></p></div>
                 </a>
